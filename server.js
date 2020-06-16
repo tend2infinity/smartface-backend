@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const knex = require('knex');
-const cors = require('cors');
+var cors = require('cors');
 
  const db = knex({
      client: 'pg',
@@ -18,7 +18,7 @@ const cors = require('cors');
  });  
 const app = express();
 app.use(bodyParser.json());
-app.use(cors()); 
+app.use(cors())
 
 
 
