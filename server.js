@@ -7,7 +7,7 @@ const cors = require('cors');
  const db = knex({
      client: 'pg',
      connection: {
-       host : '127.0.0.1',
+       host : 'postgresql-animate-36051',
        user : 'postgres',
        password : 'test',
        database : 'smartface'
