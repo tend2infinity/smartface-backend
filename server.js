@@ -7,14 +7,14 @@ var cors = require('cors');
  const db = knex({
      client: 'pg',
      connection: {
-       connectionString : 'process.env.DATABASE_URL',
+       connentionString : 'process.env.DATABASE_URL',
        ssl: true,
      }
    });
  db.select('*').from('users').then(data => {
    console.log(data);
  });  
- 
+const app = express();
 app.use(bodyParser.json());
 app.use(cors())
 
