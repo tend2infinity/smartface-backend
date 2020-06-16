@@ -7,16 +7,14 @@ var cors = require('cors');
  const db = knex({
      client: 'pg',
      connection: {
-       host : 'postgresql-animate-36051',
-       user : 'postgres',
-       password : 'test',
-       database : 'smartface'
+       connectionString : 'process.env.DATABASE_URL',
+       ssl: true,
      }
    });
  db.select('*').from('users').then(data => {
    console.log(data);
  });  
-const app = express();
+ 
 app.use(bodyParser.json());
 app.use(cors())
 
