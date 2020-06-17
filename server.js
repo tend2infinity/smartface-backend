@@ -8,7 +8,9 @@ const app = express();
      client: 'pg',
      connection: {
        connentionString : process.env.DATABASE_URL,
-       ssl: true,
+       ssl: {
+        rejectUnauthorized: false
+      }
      }
    });
  db.select('*').from('users').then(data => {
